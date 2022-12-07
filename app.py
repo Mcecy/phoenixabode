@@ -4,7 +4,6 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from PIL import Image
 from io import BytesIO
-import os
 
 from helpers import error, login_required, admin_required
 
@@ -21,11 +20,6 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///phoenixabode.db")
-
-
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
 
 
 @app.after_request
