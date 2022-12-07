@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex justify-content-center mt-3">
+        <form action="/post" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="novel_title" placeholder="Novel Title" type="text">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" min="1" name="chapter_number" placeholder="Chapter Number" type="number">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="chapter_title" placeholder="Chapter Title" type="text">
+            </div>
+            <div class="mb-3">
+                <textarea class="mx-auto my-auto" name="content" placeholder="Text"></textarea>
+            </div>
+            <button class="btn btn-primary mx-3 my-1" type="submit">Post</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Library
+{% endblock %}
+
+{% block main %}
+    <div class="crd mx-3 my-3">
+        <div class="content">
+            <div class="d-block justify-content-left">
+                <h2 class="text-capitalize">Library</h3>
+            </div>
+        </div>
+    </div>
+    <table class="table table-dark mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Chapter Count</th>
+                <th scope="col">Author</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if novels is defined %}
+                {% for novel in novels %}
+                    <tr>
+                        <td>{{novel.id}}</td>
+                        <td><a href="/read/{{novel.title}}" class="text-capitalize">{{novel.title}}</a></td>
+                        <td>{{novel.chapters}}</td>
+                        <td>{{novel.name}}</td>
+                        <td class="text-capitalize">{{novel.status}}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

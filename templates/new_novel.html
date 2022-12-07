@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Novel
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex justify-content-center mt-3">
+        <form action="/new_novel" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="title" placeholder="Title" type="text">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="author" placeholder="Author" type="text">
+            </div>
+            <div class="mb-3">
+                <textarea class="mx-auto my-auto" name="sinopsis" placeholder="Text"></textarea>
+            </div>
+            <button class="btn btn-primary mx-3 my-1" type="submit">Add Novel</button>
+        </form>
+    </div>
+{% endblock %}

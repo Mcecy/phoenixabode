@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block main %}
+    <div class="mx-3 my-3 crd">
+        <div class="content">
+            <h3 class="text-capitalize">Novel: {{title}}</h3>
+            <h4>Chapter: {{chapter_title}}</h4>
+        </div>
+    </div>
+    <div class="mx-3 my-3 crd">
+        <div class="content">
+            {% for p in content %}
+                <p class="text-left mx-3 my-2">{{p}}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

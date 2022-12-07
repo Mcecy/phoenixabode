@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <div class="crd">
+        <div class="content">
+            {% if pic is defined %}
+                <img class="pic" src="{{pic}}" alt="Profile Picture" width="200" height="200">
+            {% else %}
+                <img class="pic" src="static/lonely.jpg" alt="Profile Picture" width="200" height="200">
+            {% endif %}
+            <p class="mx-3 my-2">Username: {{info.username}}</p>
+            <p class="mx-3 my-2">Gender: {{info.gender}}</p>
+            <p class="mx-3 my-2">About: {{info.about}}</p>
+            <a class="mx-3 my-2" href="/library/{{session.get("user_id")}}">Library</a>
+            <a class="mx-3 my-2" href="/edit_profile">Edit Profile</a>
+        </div>
+    </div>
+{% endblock %}

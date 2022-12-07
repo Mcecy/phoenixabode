@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Profile
+{% endblock %}
+
+{% block main %}
+    <div class="crd">
+        <div class="content">
+            <p class="mx-3 my-3">{{session.get("username")}}</p>
+            <img class="pic" src="static/pic.jpg">
+            <form action="/edit_profile" enctype="multipart/form-data" method="post">
+                <div class="d-flex flex-column">
+                    <input class="mb-3" type="file" name="pic" placeholder="Profile Picture">
+                    <input class="mb-3" type="text" name="username" placeholder="Username">
+                    <input class="mb-3" type="text" name="gender" placeholder="Gender">
+                    <textarea class="mx-auto my-auto" name="about" placeholder="About"></textarea>
+                    <input class="mb-3" type="submit" value="Upload">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

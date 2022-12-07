@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block main %}
+    <div class="crd mx-3 my-3">
+        <div class="content">
+            <div class="d-block justify-content-left">
+                <h3 class="text-capitalize">Novel: {{title}}</h3>
+                <h3 class="text-capitalize">Author: {{author}}</h3>
+                <p class="text-left my-3 mx-3">{{sinopsis}}</p>
+                <form action="/read/{{title}}" method="post">
+                    <button class="btn btn-primary" type="submit">Save on your library</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex mt-4 justify-content-left">
+        <div class="content">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Chapter Title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chapter in chapters %}
+                        <tr>
+                            <td>{{chapter.id}}</td>
+                            <td><a href="/read/{{title}}/{{chapter.id}}">{{chapter.title}}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
