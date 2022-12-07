@@ -3,5 +3,3 @@ Flask
 Flask-Session
 requests
 Pillow
-io
-werkzeug.security
